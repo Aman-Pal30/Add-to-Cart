@@ -47,9 +47,6 @@ const Header = () => {
         className="navbar-fixed"
       >
         <Container>
-          {/* <NavLink to="/" className="text-decoration-none text-light mx-3">
-            Add to Cart
-          </NavLink> */}
           <Nav className="me-auto">
             <NavLink to="/" className="text-decoration-none text-light">
               Home

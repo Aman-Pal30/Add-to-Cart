@@ -41,11 +41,14 @@ const CardDetails = () => {
         <div className="itemsdetails">
           {Data.map((ele) => {
             return (
-              <div key={ele.id} className="d-flex align-items-center">
+              <div
+                key={ele.id}
+                className="d-flex align-items-center flex-column flex-md-row"
+              >
                 <div className="items_img">
                   <img src={ele.imgdata} alt="Food Image" />
                 </div>
-                <div className="details">
+                <div className="details mt-3">
                   <Table>
                     <tbody style={{ verticalAlign: "middle" }}>
                       <tr>
@@ -128,6 +131,94 @@ const CardDetails = () => {
                     </tbody>
                   </Table>
                 </div>
+
+                {/* <div className="details mt-3">
+                  <div className="table-responsive">
+                    <Table bordered hover>
+                      <tbody style={{ verticalAlign: "middle" }}>
+                        <tr>
+                          <td className="w-md-50">
+                            <p>
+                              <strong>Restaurant :</strong> {ele.rname}
+                            </p>
+                            <p>
+                              <strong>Price :</strong> ₹ {ele.price}
+                            </p>
+                            <p>
+                              <strong>Dishes :</strong> {ele.address}
+                            </p>
+                            <p>
+                              <strong>Total :</strong> ₹ {ele.price * ele.qnty}
+                            </p>
+                            <div
+                              className="mt-3 d-flex justify-content-between align-items-center"
+                              style={{
+                                maxWidth: 120,
+                                cursor: "pointer",
+                                background: "#ddd",
+                                color: "#111",
+                                borderRadius: "6px",
+                              }}
+                            >
+                              <span
+                                style={{ fontSize: 24, paddingLeft: 15 }}
+                                onClick={
+                                  ele.qnty <= 1
+                                    ? () => dlt(ele.id)
+                                    : () => remove(ele)
+                                }
+                              >
+                                -
+                              </span>
+                              <span style={{ fontSize: 22 }}>{ele.qnty}</span>
+                              <span
+                                style={{ fontSize: 24, paddingRight: 15 }}
+                                onClick={() => send(ele)}
+                              >
+                                +
+                              </span>
+                            </div>
+                          </td>
+
+                          <td className="w-md-50">
+                            <p>
+                              <strong>Rating :</strong>
+                              <span
+                                style={{
+                                  background: "green",
+                                  color: "#fff",
+                                  padding: "0 7px",
+                                  borderRadius: "5px",
+                                  marginLeft: "7px",
+                                }}
+                              >
+                                {ele.rating}
+                              </span>
+                            </p>
+                            <p>
+                              <strong>Order Review :</strong>
+                              <span>{ele.somedata}</span>
+                            </p>
+                            <p>
+                              <strong>Remove :</strong>
+                              <span style={{ marginLeft: 8 }}>
+                                <i
+                                  className="fa-solid fa-trash"
+                                  onClick={() => dlt(ele.id)}
+                                  style={{
+                                    color: "red",
+                                    fontSize: "20px",
+                                    cursor: "pointer",
+                                  }}
+                                ></i>
+                              </span>
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </div>
+                </div> */}
               </div>
             );
           })}
